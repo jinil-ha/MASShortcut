@@ -414,17 +414,6 @@ void *kUserDataHint = &kUserDataHint;
     _hintToolTipTag = [self addToolTipRect:hintRect owner:self userData:kUserDataHint];
 }
 
-- (NSString *)view:(NSView *)view stringForToolTip:(NSToolTipTag)tag point:(CGPoint)point userData:(void *)data
-{
-    if (data == kUserDataShortcut) {
-        return MASLocalizedString(@"Click to record new shortcut", @"Tooltip for non-empty shortcut button");
-    }
-    else if (data == kUserDataHint) {
-        return MASLocalizedString(@"Delete shortcut", @"Tooltip for hint button near the non-empty shortcut");
-    }
-    return @"";
-}
-
 #pragma mark - Event monitoring
 
 - (void)activateEventMonitoring:(BOOL)shouldActivate
